@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DrawingImg } from "./";
+import { DrawingImg } from "./DrawingImg";
 import { Container } from "./styles";
 import { crow_S, crystal_S, fox_S, gift, moon_S, open_S } from "./assets";
 

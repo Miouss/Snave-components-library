@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const notMobile = "(min-width: 960px)";
-const titleSize = "clamp(64px, 7vw, 128px)";
-
 export function HomeFrame() {
+  const notMobile = "(min-width: 960px)";
+  const titleSize = "clamp(64px, 7vw, 128px)";
+
   const Container = styled("div")`
     width: 100%;
     height: 100%;
@@ -19,9 +19,9 @@ export function HomeFrame() {
   `;
 
   const Title = styled("h1")`
-    height: 40%;
     display: flex;
     align-items: flex-end;
+    padding-top: 150px;
 
     justify-content: flex-start;
     margin: 0;
@@ -30,6 +30,10 @@ export function HomeFrame() {
     font-weight: 700;
     letter-spacing: 0em;
     white-space: nowrap;
+
+    @media ${notMobile} {
+      padding-top: 0;
+    }
   `;
 
   const SubContainer = styled("div")`
@@ -103,7 +107,6 @@ export function HomeFrame() {
             <Color color="#D26443">code</Color> &{" "}
             <Color color="#93D243">draw</Color>
           </ShortDesc>
-
           <LongDesc>
             Based in south of France, i’m a multidisciplinary Designer trying to
             improve the lives of others through design and to learn new things
