@@ -47,6 +47,5 @@ export const Img = styled.img<{rotateDeg: number}>`
   max-width          : 500px;
   height             : auto;
 
-  border             : 1px solid red;
   transform          : rotate(${({rotateDeg}) => rotateDeg}deg);
 `;
