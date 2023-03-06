@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { SelectedProject } from "./ProjectsPrez";
-import { SMALL_PC, NORMAL_PC } from "../..";
 
 interface Props {
   project: SelectedProject;
@@ -10,13 +9,14 @@ interface Props {
 
 export function Card({ project, setSelectedProject }: Props) {
   const Card = styled.div`
-    width: 8vw;
+    flex: calc(25% - 10px);
     display: flex;
     justify-content: center;
     align-items: center;
-    ${NORMAL_PC} {
-      width: 6vw;
-    }
+  `;
+
+  const CardContainer = styled.div`
+    width: 100px;
   `;
 
   const CardImg = styled.img`
@@ -26,7 +26,13 @@ export function Card({ project, setSelectedProject }: Props) {
 
   return (
     <Card>
-      <CardImg src={project.source} alt="Project" onClick={() => setSelectedProject(project)} />
+      <CardContainer>
+        <CardImg
+          src={project.source}
+          alt="Project"
+          onClick={() => setSelectedProject(project)}
+        />
+      </CardContainer>
     </Card>
   );
 }

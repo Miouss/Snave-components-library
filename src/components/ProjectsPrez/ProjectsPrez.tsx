@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Cards as Cards } from "./Cards";
 import { useState } from "react";
-import { SMALL_PC, NORMAL_PC, TABLET } from "../..";
+import { TABLET } from "../..";
 
 export interface SelectedProject {
   source: string;
@@ -30,19 +30,19 @@ export function ProjectsPrez() {
   const SelectedProjectContainer = styled.div`
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    gap: 10px;
     padding: 24px;
   `;
 
   const Description = styled.div`
     flex: 1;
+    min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: min(1vw, 1rem);
-    transform: translateX(10%);
   `;
 
   const ImgSection = styled.div`
@@ -50,24 +50,25 @@ export function ProjectsPrez() {
     display: flex;
     justify-content: center;
     align-items: center;
-  `;
 
-  const ImgContainer = styled.div`
-    width: min(20vw, 280px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    
     animation: scaleIn 0.5s ease-in-out forwards;
 
     @keyframes scaleIn {
       0% {
-        transform: scale(0) translateX(50%);
+        transform: scale(0);
       }
       100% {
-        transform: scale(1) translateX(50%);
+        transform: scale(1);
       }
     }
+  `;
+
+  const ImgContainer = styled.div`
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   `;
 
   const Img = styled.img`
@@ -79,21 +80,20 @@ export function ProjectsPrez() {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
 
-    overflow-y: scroll;
-    overflow-x: hidden;
     background: #bea28e;
   `;
 
   const CardsGrid = styled.div`
     flex: 1;
-    transform: translateX(13%);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    column-gap: 96px;
+    column-gap: 10px;
     row-gap: 48px;
+    padding: 80px 100px;
+
+    overflow-y: scroll;
   `;
 
   return (
